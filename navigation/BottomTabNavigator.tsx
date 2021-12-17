@@ -8,6 +8,7 @@ import useColorScheme from '../hooks/useColorScheme';
 import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
+import CaculatorScreenInfo from '../components/CaculatorScreenInfo';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -23,6 +24,7 @@ export default function BottomTabNavigator() {
         component={TabOneNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+
         }}
       />
       <BottomTab.Screen
@@ -30,9 +32,11 @@ export default function BottomTabNavigator() {
         component={TabTwoNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+
         }}
       />
     </BottomTab.Navigator>
+    // <TabTwoNavigator />
   );
 }
 
@@ -52,7 +56,17 @@ function TabOneNavigator() {
       <TabOneStack.Screen
         name="TabOneScreen"
         component={TabOneScreen}
-        options={{ headerTitle: 'Tab One Title' }}
+        options={{ 
+          headerTitle: 'Caculator',
+          headerStyle: {
+            backgroundColor: '#f246c7',
+          },
+          headerTitleStyle: {
+            fontWeight: 'bold',
+            color: '#ffffff',
+            // marginTop: 20
+          }
+        }}
       />
     </TabOneStack.Navigator>
   );
@@ -66,7 +80,17 @@ function TabTwoNavigator() {
       <TabTwoStack.Screen
         name="TabTwoScreen"
         component={TabTwoScreen}
-        options={{ headerTitle: 'Tab Two Title' }}
+        options={{ 
+          headerTitle: 'Caculator',
+          headerStyle: {
+            backgroundColor: '#f246c7',
+          },
+          headerTitleStyle: {
+            fontWeight: 'bold',
+            color: '#ffffff',
+            // marginTop: 20
+          }
+        }}
       />
     </TabTwoStack.Navigator>
   );
